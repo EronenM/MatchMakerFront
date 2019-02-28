@@ -7,7 +7,7 @@ class Navbar extends Component {
     render() {
         return (
             <div>
-                <ButtonToolbar>
+                {/* <ButtonToolbar>
                     &nbsp;
                     <NavLink to='/'>
                     <Button variant="secondary">Main</Button>
@@ -48,7 +48,7 @@ class Navbar extends Component {
                     <NavLink to='/GetUserPreferences'>
                     <Button variant="dark">prefrencekomponenti</Button>
                     </NavLink>
-                </ButtonToolbar>
+                </ButtonToolbar> */}
             </div>
         );
     }
