@@ -85,7 +85,7 @@ class InputForm extends Component {
         return (
             <div className="UpperCreateForm">
                 <div className="CreateForm">
-                    <h1 id="CreateHeader">Create new account</h1>
+                    <h2 id="CreateHeader">Create new account</h2>
                     {/* {consultantSelected} */}
                     <Form>
                         <Form.Group>
