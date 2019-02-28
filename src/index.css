@@ -8,13 +8,14 @@ body {
   /* background-repeat: space; */
   margin: 0;
   padding: 0;
-  font-family: 'Overlock', cursive;
+  font-family: 'Nunito', cursive;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-color:rgb(44, 68, 58);
+color:rgb(44, 85, 68);
+
 }
 
 code {
-  font-family: 'Overlock', cursive;
+  font-family: 'Nunito', cursive;
 }

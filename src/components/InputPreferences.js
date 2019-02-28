@@ -122,7 +122,7 @@ class InputPreferences extends Component {
         return (
             <div className="UpperInputPreferences">
                 <div className="InputPreferences">
-                <h2>Let's do some wishful thinking here, right?</h2>
+                <h2>Let's do some wishful thinking here, shall we?</h2>
                     <Form>
                             <br/>
                            
@@ -178,7 +178,7 @@ class InputPreferences extends Component {
 
                         {/* ----------------------- Yläpuolella Preference Formin Favourite Technology osat */}
                         <br />
-                            <Button variant="primary" type="submit" onClick={this.createPrefButton}>Save and go to main page</Button>
+                            <Button variant="success" type="submit" onClick={this.createPrefButton}>Save and go to main page</Button>
                             <br/>
                     </Form>
                 </div>

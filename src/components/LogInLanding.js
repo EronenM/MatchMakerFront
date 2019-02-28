@@ -40,15 +40,15 @@ class LogInLanding extends Component {
                 <Form>
                     <Form.Group>
                         {/* <Form.Label>enter your email</Form.Label> */}
-                        <Form.Control type="text" placeholder="Enter your email" onChange={this.emailChanged}></Form.Control>
+                        <Form.Control type="text" placeholder="Email" onChange={this.emailChanged}></Form.Control>
                     </Form.Group>
 
                     <Form.Group>
                         {/* <Form.Label>enter your password</Form.Label> */}
-                        <Form.Control type="password" placeholder="Enter your password" onChange={this.passwordChanged}></Form.Control>
+                        <Form.Control type="password" placeholder="Password" onChange={this.passwordChanged}></Form.Control>
                     </Form.Group>
 
-                    <Button onClick={this.postLogInInformation}>Log In</Button>
+                    <Button variant="success" onClick={this.postLogInInformation}>Log In</Button>
                 </Form>
             </div>
         );
