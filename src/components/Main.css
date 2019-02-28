@@ -1,12 +1,16 @@
 .main {
+    padding-top: 10px;
     width: 400px;
+    height: 450px;
     margin: auto;
     background-color: rgb(255, 255, 255);
-    opacity: 0.85;
+    opacity: 0.95;
     border-radius: 15px;
+
 }
 .loginFormBackGround {
     width: 300px;
     text-align: center;
     margin: auto;
+    
 }

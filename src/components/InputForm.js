@@ -85,13 +85,13 @@ class InputForm extends Component {
         return (
             <div className="UpperCreateForm">
                 <div className="CreateForm">
-                    <h1 id="CreateHeader">Create new account</h1>
+                    <h2 id="CreateHeader">Create new account</h2> <br/>
                     {/* {consultantSelected} */}
                     <Form>
                         <Form.Group>
                             <Form.Control type="text" placeholder="First name" onChange={this.firstnameMuuttui} /><br />
                             <Form.Control type="text" placeholder="Last name" onChange={this.lastnameMuuttui} /><br />
-                            <Form.Control type="email" placeholder="Enter email" onChange={this.emailMuuttui} /><br />
+                            <Form.Control type="email" placeholder="Email" onChange={this.emailMuuttui} /><br />
                             <Form.Control type="password" placeholder="Password" onChange={this.passwordMuuttui} /><br />
                             <Form.Control as="textarea" placeholder="Copypaste here your Cinode profile link (and any other links the salesperson might find useful)!" rows="3" onChange={this.descriptionMuuttui} /><br />
                             <Form.Control as="select" onChange={this.usertypeMuuttui}>
@@ -109,7 +109,7 @@ class InputForm extends Component {
                         </Form.Group>
                         <p>You have to fill in all forms in order to continue, sorry!</p>
 
-                        <Button variant="primary" type="submit" onClick={this.registerButton}>
+                        <Button variant="success" type="submit" onClick={this.registerButton}>
                             All done, create my account!
                     </Button>
                         {/* Allaolevat usertypet ja courset on kommentoitu pois, koska nämä tiedot pitää välittää myöhemmin lomakkeelle propseina */}

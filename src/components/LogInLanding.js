@@ -36,20 +36,19 @@ class LogInLanding extends Component {
           }
         return (
             <div>
-                <h1>Login</h1>
-                <h2>Enter your credentials</h2>
+                <h2>Welcome to MatchMaker, fellow Academic Worker (or soon to be)!</h2>
                 <Form>
                     <Form.Group>
-                        <Form.Label>enter your email</Form.Label>
-                        <Form.Control type="text" onChange={this.emailChanged}></Form.Control>
+                        {/* <Form.Label>enter your email</Form.Label> */}
+                        <Form.Control type="text" placeholder="Email" onChange={this.emailChanged}></Form.Control>
                     </Form.Group>
 
                     <Form.Group>
-                        <Form.Label>enter your password</Form.Label>
-                        <Form.Control type="password" onChange={this.passwordChanged}></Form.Control>
+                        {/* <Form.Label>enter your password</Form.Label> */}
+                        <Form.Control type="password" placeholder="Password" onChange={this.passwordChanged}></Form.Control>
                     </Form.Group>
 
-                    <Button onClick={this.postLogInInformation}>Log In</Button>
+                    <Button variant="success" onClick={this.postLogInInformation}>Log In</Button>
                 </Form>
             </div>
         );
