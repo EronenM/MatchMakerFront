@@ -11,13 +11,10 @@ class Main extends Component {
             <div className="main">
                 <div className="loginFormBackGround">
 
-                    {/* <NavLink to='/LogInLanding'>
-                    <Button variant="dark">Log In</Button>
-                    </NavLink> */}
                     <LogInLanding />
 
                     <NavLink to='/InputForm'>
-                        <br /> Create new account
+                        <br />Create new account
                 </NavLink>
                 </div>
             </div>

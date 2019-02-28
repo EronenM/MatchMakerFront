@@ -1,5 +1,7 @@
 .UpperCreateForm {
+    padding-top: 10px;
     width: 400px;
+    height: 720px;
     margin: auto;
     background-color: rgb(255, 255, 255);
     opacity: 0.85;
@@ -7,6 +9,7 @@
 }
 .CreateForm {
     width: 300px;
+    height: 450px;
     text-align: center;
     margin: auto;
 }
