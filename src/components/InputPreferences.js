@@ -16,7 +16,7 @@ class InputPreferences extends Component {
         technology1: "",
         technology2: "",
         technology3: "",
-        person_id:2} // Tämä on kovakoodattu ! Muista vaihtaa aina ku demoot lisää
+        person_id:3} // Tämä on kovakoodattu ! Muista vaihtaa aina ku demoot lisää
     }
     // -- Komponentti saa propseina konsultin login tiedot propseina
     // -- Välimallin feature: InputFormin propsit menee välimallin sivulle jossa on login details ja siitä siirrytään tänne :D

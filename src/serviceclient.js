@@ -22,6 +22,27 @@ export function haeTechnology (){
     })
 }
 // --------- Ylläolevat on GET käskyjä preference formin dropdown menuille
+
+export function getAllUsers(){
+    return fetch('/api/form/Getall')
+    .then(function(response){
+        return response.json();
+    })
+}
+// --------- Ylläoleva hakee kaikki käyttäjät API:n Getall toiminnolla
+
+export function logInUser(logInData){
+    let options = {
+        method: "GET",
+        body : JSON.stringify(logInData),
+        headers: {
+            "Content-Type" : "application/json"
+        }
+    }
+    return fetch('POIKIEN LOGIN API URL', options)
+}
+// ---------- Ylläoleva kirjaa sisään käyttäjän, en osaa sanoa 11.39 PM onko sen HTTP pyynnön metodi GET vai POST? LOL :D
+
 export function createNewUser(newUserData){
     let options = {
         method: "POST",
@@ -33,6 +54,7 @@ export function createNewUser(newUserData){
     
 }
 // Ylläoleva luo uuden käyttäjän
+
 
 export function createPreferences(newPreferenceData){
     console.log(newPreferenceData);

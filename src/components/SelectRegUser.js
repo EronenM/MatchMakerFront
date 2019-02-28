@@ -9,9 +9,15 @@ class SelectRegUser extends Component {
                 <h1>Select your user type</h1>
                 {/* <NavLink to='/SelectRegUser'>
                 </NavLink> */}
-                <Button>Consultant</Button>
-                &nbsp;
-                <Button>Myyjä</Button>
+                    <NavLink to='/InputForm'>
+                    <Button variant="dark">Myyjä</Button>
+                    </NavLink>
+               
+
+                    &nbsp;
+                    <NavLink to='/InputFormConsultant'>
+                    <Button variant="dark">Consultant</Button>
+                    </NavLink>
             </div>
         );
     }

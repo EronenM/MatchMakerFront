@@ -33,6 +33,16 @@ class Navbar extends Component {
                     <NavLink to='/APIOutput'>
                     <Button variant="dark">APIOutput</Button>
                     </NavLink>
+
+                    &nbsp;
+                    <NavLink to='/GetAllLanding'>
+                    <Button variant="dark">GetAllLanding</Button>
+                    </NavLink>
+
+                    &nbsp;
+                    <NavLink to='/LogInLanding'>
+                    <Button variant="dark">LogInLanding</Button>
+                    </NavLink>
                 </ButtonToolbar>
             </div>
         );
