@@ -6,9 +6,9 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+color:rgb(44, 68, 58);
 }
 
 code {
   font-family: 'Overlock', cursive;
-
 }
