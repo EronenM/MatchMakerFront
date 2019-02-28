@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Col } from 'react-bootstrap';
-<<<<<<< HEAD
 import {haeFieldOfInterest, haePosition, haeTechnology, createPreferences} from '../serviceclient';
 import { Redirect } from 'react-router-dom';
+import './InputPreferences.css';
 
 class InputPreferences extends Component {
     state = {fieldOfInterest:[], position:[], technology:[], redirect:false, 
@@ -19,28 +19,9 @@ class InputPreferences extends Component {
         technology2: "",
         technology3: "",
         person_id: sessionStorage.userID} 
-=======
-import { haeFieldOfInterest, haePosition, haeTechnology, createPreferences } from '../serviceclient';
-import './InputPreferences.css'
 
 
-class InputPreferences extends Component {
-    state = {
-        fieldOfInterest: [], position: [], technology: [],
-        //----- Alla on stateen tallennetut, preference tableen menevät tiedot omassa oliossaan (olio state taulun sisäl)
-        data: {
-            fieldofinterest1: "",
-            fieldofinterest2: "",
-            fieldofinterest3: "",
-            position1: "",
-            position2: "",
-            position3: "",
-            technology1: "",
-            technology2: "",
-            technology3: "",
-            person_id: sessionStorage.userID
-        }
->>>>>>> experiment
+
     }
     // -- Komponentti saa propseina konsultin login tiedot propseina
     // -- Välimallin feature: InputFormin propsit menee välimallin sivulle jossa on login details ja siitä siirrytään tänne :D
@@ -114,11 +95,7 @@ class InputPreferences extends Component {
     createPrefButton = (e) => {
         e.preventDefault();
         console.log("CreatePrefButton");
-<<<<<<< HEAD
         createPreferences(this.state.data).then(resp=>console.dir(resp)).then(this.setState({redirect:true}));
-=======
-        createPreferences(this.state.data).then(resp => console.dir(resp));
->>>>>>> experiment
 
     }
 
@@ -143,15 +120,6 @@ class InputPreferences extends Component {
         // ------------ Yllä olevat renderöi dropdowneille saadut tiedot
         // ------------ Tähän voisi lisätä sen, että kun valitsee yhden, niin kakkosessa ei ole enää sitä vaihtoehtoa
         return (
-<<<<<<< HEAD
-            <div>
-                <h2>Please select all your preferences and save after that! :)</h2>
-                <Form>
-                <Form.Row>
-                    <Form.Group as={Col}>
-                        <Form.Label>Select your field of interest #1</Form.Label>
-                        <Form.Control as="select" onChange={this.foi1Muuttui}>
-=======
             <div className="UpperInputPreferences">
                 <div className="InputPreferences">
                 <h2>Let's do some wishful thinking here, shall we?</h2>
@@ -160,7 +128,6 @@ class InputPreferences extends Component {
                            
                             <Form.Control as="select" onChange={this.foi1Muuttui}>
                                 <option selected={true} disabled={true}>Select your field of interest #1</option>
->>>>>>> experiment
                                 {fieldofinterestOption}
                             </Form.Control> <br/>
 
