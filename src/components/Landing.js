@@ -20,7 +20,7 @@ class Landing extends Component {
                 <Router>
                     <div>
 
-                    <Navbar/>
+                    {/* <Navbar/> */}
                         <Switch>
                             <Route exact path='/' component={Main}/>
                             <Route path='/SelectRegUser' component={SelectRegUser}/>

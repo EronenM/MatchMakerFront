@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getAllUsers } from '../serviceclient';
+import { getAllUsers, deleteUserData } from '../serviceclient';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
 import { Redirect } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom';
 
 
 class GetAllLanding extends Component {
-    state={getAllResults:[], userPreferenceData:[], redirect:false}
+    state={getAllResults:[], userPreferenceData:[], redirect:false, /*redirect2:false*/}
     constructor(props){
         super(props);
     }
@@ -29,6 +29,17 @@ class GetAllLanding extends Component {
         console.dir(this.props);
          this.setState({redirect:true})
     }
+
+    cardDeleteFunction = (e) => {
+        e.preventDefault();
+        deleteUserData(e.target.value).then(function(response){
+            console.log("delete response",response)
+        })
+
+        
+    }
+    
+
     
     render() {
 // ------ Statessa oleva getAllResults mapataan allTheResults constiin jolla printataan dataa alaspäi
@@ -36,20 +47,27 @@ class GetAllLanding extends Component {
 // ------ molemmista tauluista, jotta saadaan relevantteja tuloksia; haku SQL:ään on jotain (ehkä) mallia:
 // ------ select * from People pe join Preferences pf on pe.person_id = pf.person_id where position1 = 'Software Architect'
 const {redirect} = this.state;
+// // const {redirect2} = this.state;
 
 if (redirect) {
     return <Redirect to='/GetUserPreferences' push="true"/>;
-
   }
+
+
+//   if (redirect2) {
+//     return <Redirect to='/GetAllLanding' push="true"/>;
+//   }
         const allTheResults = this.state.getAllResults.map( value => {
-            return  <Card style={{ width: '18rem' }}>
+            return  <Card key={value.person_id} style={{ width: '18rem' }}>
             <Card.Body>
               <Card.Title>{value.firstname} {value.lastname}</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">{value.course} course</Card.Subtitle>
               <Card.Text>
                 {value.description}
               </Card.Text>
-              <Button onClick={this.cardButtonFunction} value={value.person_id}>Megabutton</Button>
+              <Button onClick={this.cardButtonFunction} value={value.person_id}>User preferences</Button>
+              
+              {/* <Button onClick={this.cardDeleteFunction} value={value.person_id}>Delete user</Button> */}
             </Card.Body>
           </Card>;
         }
@@ -57,7 +75,7 @@ if (redirect) {
 
         return (
             <div>
-                <h1>Tässä on nää kaikki hakutulokset</h1>
+                <h2>Below you can see available users</h2>
 {/* //--------------allTheResults printtaa mitä ikinä mappi funktio vetää allTheResultsiin */}
                 {allTheResults}
             </div>

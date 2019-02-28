@@ -20,7 +20,11 @@ class ConsultantView extends Component {
           this.setState({usertype:"Salesperson"})
       }
 
+      
+
     }
+    
+
            renderThis (hevonen) {
       
               if (this.state.usertype === "Consultant") {
@@ -31,6 +35,8 @@ class ConsultantView extends Component {
               
             }
     
+        
+
     render() {
             
 
@@ -40,11 +46,7 @@ class ConsultantView extends Component {
                 <br/>
                 <h4>{this.state.usertype} of {this.state.course} course.</h4>
                 <br/>
-                <h5>This is your description</h5>
-                <br/>
-                <p>{this.state.description}</p>
-
-                <h2>Please select your preferences</h2>
+            
                 {this.renderThis()}
                 {/* <InputPreferences/> */}
             </div>

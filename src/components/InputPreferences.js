@@ -3,9 +3,10 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Col } from 'react-bootstrap';
 import {haeFieldOfInterest, haePosition, haeTechnology, createPreferences} from '../serviceclient';
+import { Redirect } from 'react-router-dom';
 
 class InputPreferences extends Component {
-    state = {fieldOfInterest:[], position:[], technology:[], 
+    state = {fieldOfInterest:[], position:[], technology:[], redirect:false, 
 //----- Alla on stateen tallennetut, preference tableen menevät tiedot omassa oliossaan (olio state taulun sisäl)
       data: { fieldofinterest1: "",
         fieldofinterest2: "",
@@ -90,7 +91,7 @@ class InputPreferences extends Component {
     createPrefButton = (e) => {
         e.preventDefault();
         console.log("CreatePrefButton");
-        createPreferences(this.state.data).then(resp=>console.dir(resp));
+        createPreferences(this.state.data).then(resp=>console.dir(resp)).then(this.setState({redirect:true}));
 
     }
 
@@ -116,6 +117,7 @@ class InputPreferences extends Component {
 // ------------ Tähän voisi lisätä sen, että kun valitsee yhden, niin kakkosessa ei ole enää sitä vaihtoehtoa
         return (
             <div>
+                <h2>Please select all your preferences and save after that! :)</h2>
                 <Form>
                 <Form.Row>
                     <Form.Group as={Col}>

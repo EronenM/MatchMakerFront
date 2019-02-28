@@ -21,7 +21,7 @@ class LogInLanding extends Component {
         logInUser(this.state).then( response => {
             console.log("loginresponse",response)
             sessionStorage.userID=response.person_id;
-            
+            sessionStorage.whoareyou=response.usertype
             sessionStorage.logintiedot=JSON.stringify(response)
             this.setState({redirect:true});
         });
@@ -32,7 +32,7 @@ class LogInLanding extends Component {
         const { redirect } = this.state;
 
         if (redirect) {
-            return <Redirect to='/ConsultantView'/>;
+            return <Redirect to='/ConsultantView' push="true"/>;
           }
         return (
             <div>

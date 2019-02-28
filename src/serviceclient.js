@@ -13,6 +13,20 @@ export function getUserPreferenceData (person_id){
     })
 }
 
+export function deleteUserData (person_id){
+    let options = {
+        method: "DELETE",
+        // body: JSON.stringify(person_id),
+        headers: {
+            "Content-Type" : "application/json"
+        }
+    }
+    return fetch('/api/form/DeleteFull/?id='+person_id,options)
+    .then(function(response) {
+        return response;
+    })
+}
+
 // -- Export funktio haeFieldOfInterest palauttaa fetchin, jossa .then ottaa promisen kiinni
 // -- Tämä promise palautetaan parsittuna APIOutput komponentille.
 export function haeFieldOfInterest (){
@@ -84,6 +98,8 @@ export function createPreferences(newPreferenceData){
     }
     return fetch('/api/form/CreatePreferences',options)
 }
+
+
 
 export function fetchPost(uusi){
     let options={method:"POST", headers:{"Content-Type":"application/json", Accept:"application/json", body:JSON.stringify(uusi)}};

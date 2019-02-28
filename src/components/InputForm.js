@@ -47,11 +47,11 @@ class InputForm extends Component {
     // konsultti = true = sql bit 1
     // myyjä = false = sql bit 0
     usertypeMuuttui = (e) => {
-        if (e.target.value === "Consultant") {
+        if (e.target.value === "I'm a consultant") {
             this.setState({ usertype: true })
             console.log("state-usertype", this.state.usertype)
         }
-        if (e.target.value === "Salesperson") {
+        if (e.target.value === "I'm a salesperson") {
             this.setState({ usertype: false })
             console.log("state-usertype", this.state.usertype)
         }
@@ -79,7 +79,7 @@ class InputForm extends Component {
         const { redirect } = this.state;
 
         if (redirect) {
-            return <Redirect to='/' />;
+            return <Redirect to='/' push="true"/>;
         }
 
         return (
