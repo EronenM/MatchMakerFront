@@ -9,14 +9,17 @@ class Main extends Component {
     render() {
         return (
             <div className="main">
-                {/* <NavLink to='/LogInLanding'>
+                <div className="loginFormBackGround">
+
+                    {/* <NavLink to='/LogInLanding'>
                     <Button variant="dark">Log In</Button>
                     </NavLink> */}
-                <LogInLanding />
+                    <LogInLanding />
 
-                <NavLink to='/InputForm'>
-                <br/> Create new account
+                    <NavLink to='/InputForm'>
+                        <br /> Create new account
                 </NavLink>
+                </div>
             </div>
         );
     }
