@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import { getAllUsers } from '../serviceclient';
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button';
+import { Redirect } from 'react-router-dom';
+
 
 
 class GetAllLanding extends Component {
-    state={getAllResults:[]}
+    state={getAllResults:[], userPreferenceData:[], redirect:false}
+    constructor(props){
+        super(props);
+    }
+
 
 // ------- Kun componentDidMount -> GetAll API:sta hakee kaikki siellä olevat peoplet staten getAllResults arrayhyn
     componentDidMount(){
@@ -12,6 +20,14 @@ class GetAllLanding extends Component {
             console.log("GetAllUsers", data)
             this.setState({getAllResults : data})
         } )
+
+    }
+    
+    cardButtonFunction = (e) => {
+        e.preventDefault();
+        sessionStorage.cardButtonID=e.target.value;
+        console.dir(this.props);
+         this.setState({redirect:true})
     }
     
     render() {
@@ -19,9 +35,23 @@ class GetAllLanding extends Component {
 // ------ Pitää muistaa, että haussa, jossa haetaan jotain spesifiä konsulttia tietoineen pitää hake joinilla
 // ------ molemmista tauluista, jotta saadaan relevantteja tuloksia; haku SQL:ään on jotain (ehkä) mallia:
 // ------ select * from People pe join Preferences pf on pe.person_id = pf.person_id where position1 = 'Software Architect'
+const {redirect} = this.state;
 
+if (redirect) {
+    return <Redirect to='/GetUserPreferences' push="true"/>;
+
+  }
         const allTheResults = this.state.getAllResults.map( value => {
-            return <li> {value.firstname} {value.lastname} is the best, moikka to the rest. </li>
+            return  <Card style={{ width: '18rem' }}>
+            <Card.Body>
+              <Card.Title>{value.firstname} {value.lastname}</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">{value.course} course</Card.Subtitle>
+              <Card.Text>
+                {value.description}
+              </Card.Text>
+              <Button onClick={this.cardButtonFunction} value={value.person_id}>Megabutton</Button>
+            </Card.Body>
+          </Card>;
         }
         )
 

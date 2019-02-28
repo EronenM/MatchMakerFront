@@ -1,4 +1,18 @@
 
+export function getUserPreferenceData (person_id){
+    let options = {
+        method: "POST",
+        // body: JSON.stringify(person_id),
+        headers: {
+            "Content-Type" : "application/json"
+        }
+    }
+    return fetch('/api/form/GetPreference/?id='+person_id,options)
+    .then(function(response) {
+        return response.json();
+    })
+}
+
 // -- Export funktio haeFieldOfInterest palauttaa fetchin, jossa .then ottaa promisen kiinni
 // -- Tämä promise palautetaan parsittuna APIOutput komponentille.
 export function haeFieldOfInterest (){
@@ -33,13 +47,17 @@ export function getAllUsers(){
 
 export function logInUser(logInData){
     let options = {
-        method: "GET",
+        method: "POST",
         body : JSON.stringify(logInData),
+        
         headers: {
-            "Content-Type" : "application/json"
+            "Content-Type" : "application/json",
         }
     }
-    return fetch('POIKIEN LOGIN API URL', options)
+    return fetch('/api/form/login', options)
+    .then(function(response){
+        return response.json();
+    })
 }
 // ---------- Ylläoleva kirjaa sisään käyttäjän, en osaa sanoa 11.39 PM onko sen HTTP pyynnön metodi GET vai POST? LOL :D
 

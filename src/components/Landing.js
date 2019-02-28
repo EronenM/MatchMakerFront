@@ -7,7 +7,9 @@ import APIOutput from './APIOutput';
 import InputPreferences from './InputPreferences';
 import SelectRegUser from './SelectRegUser';
 import GetAllLanding from './GetAllLanding';
-import LogInLanding from '../LogInLanding';
+import LogInLanding from './LogInLanding';
+import ConsultantView from './ConsultantView';
+import GetUserPreferences from './GetUserPreferences';
 
 
 class Landing extends Component {
@@ -27,6 +29,8 @@ class Landing extends Component {
                             <Route path='/InputPreferences' component={InputPreferences}/>
                             <Route path='/GetAllLanding' component={GetAllLanding}/>
                             <Route path='/LogInLanding' component={LogInLanding}/>
+                            <Route path='/ConsultantView' component={ConsultantView}/>
+                            <Route path='/GetUserPreferences'component={GetUserPreferences}/>
                             {/* <Route path='/InputFormConsultant' render={ () => { this.props.konsultti="consultant"}} component={InputForm}/> */}
                         </Switch>
                     </div>

@@ -43,6 +43,11 @@ class Navbar extends Component {
                     <NavLink to='/LogInLanding'>
                     <Button variant="dark">LogInLanding</Button>
                     </NavLink>
+
+                    &nbsp;
+                    <NavLink to='/GetUserPreferences'>
+                    <Button variant="dark">prefrencekomponenti</Button>
+                    </NavLink>
                 </ButtonToolbar>
             </div>
         );

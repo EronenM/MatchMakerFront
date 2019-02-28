@@ -16,14 +16,17 @@ class InputPreferences extends Component {
         technology1: "",
         technology2: "",
         technology3: "",
-        person_id:3} // Tämä on kovakoodattu ! Muista vaihtaa aina ku demoot lisää
+        person_id: sessionStorage.userID} 
     }
     // -- Komponentti saa propseina konsultin login tiedot propseina
     // -- Välimallin feature: InputFormin propsit menee välimallin sivulle jossa on login details ja siitä siirrytään tänne :D
     // -- Tänne tehtävä eventhandlerit, jotka ottavat dropdownien vastaukset stateen ja lähettävät POST pyynnön nappulalla APIn puolelle
     // -- Nappula tulee näkyviin kun kaikki on valittu - Katso voisiko tämän tehdä jollain hienolla bootstrap tsydeemillä
 
-    componentDidMount(){      
+    componentDidMount(){ 
+        
+        
+        
         // -- haeFieldOfInterest palauttaa promisena parsitun JSON datan (objekti) ja asettaa sen stateen
                 haeFieldOfInterest().then(data => {
                     this.setState({fieldOfInterest : data })
@@ -191,7 +194,7 @@ class InputPreferences extends Component {
 {/* ----------------------- Yläpuolella Preference Formin Favourite Technology osat */}
 
                     <Form.Row>
-                        <Button variant="primary" type="submit" onClick={this.createPrefButton}>Submit your preferences</Button>
+                        <Button variant="primary" type="submit" onClick={this.createPrefButton}>Save your preferences</Button>
                     </Form.Row>
 
                 </Form>
