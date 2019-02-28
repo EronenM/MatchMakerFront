@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="appWrapper">
         <header>
          {/* <h1>Mainostila / Cool yläbanneri</h1> */}
         </header>
