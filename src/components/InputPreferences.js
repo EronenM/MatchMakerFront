@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { Col } from 'react-bootstrap';
+// import { Col } from 'react-bootstrap';
 import {haeFieldOfInterest, haePosition, haeTechnology, createPreferences} from '../serviceclient';
 import { Redirect } from 'react-router-dom';
 import './InputPreferences.css';
@@ -103,7 +103,10 @@ class InputPreferences extends Component {
 
 
     render() {
-
+        const { redirect } = this.state;
+        if (redirect) {
+            return <Redirect to='/' push="true"/>;
+          }
 
         const fieldofinterestOption = this.state.fieldOfInterest.map(value => {
             return <option>{value}</option>
@@ -178,7 +181,7 @@ class InputPreferences extends Component {
 
                         {/* ----------------------- Yläpuolella Preference Formin Favourite Technology osat */}
                         <br />
-                            <Button variant="success" type="submit" onClick={this.createPrefButton}>Save and go to main page</Button>
+                            <Button variant="success" type="submit" onClick={this.createPrefButton}>Save preferences and log out</Button>
                             <br/>
                     </Form>
                 </div>

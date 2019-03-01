@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { Col } from 'react-bootstrap';
+// import { Col } from 'react-bootstrap';
 import { createNewUser } from '../serviceclient';
 import { Redirect } from 'react-router-dom';
 import './InputForm.css';
 
 class InputForm extends Component {
-    state = { firstname: "", lastname: "", course: "C#", description: "", email: "", password: "", usertype: true, redirect: false }
+    state = { firstname: "", lastname: "", course: "C#", description: "", email: "", password: "", usertype: false, redirect: false }
 
 
 
@@ -66,6 +66,8 @@ class InputForm extends Component {
 
     registerButton = (e) => {
         e.preventDefault();
+        console.log("registeröity state",this.state)
+        sessionStorage.newUserCreated="true";
         createNewUser(this.state).then(this.setState({ redirect: true }));
     }
 
@@ -79,7 +81,7 @@ class InputForm extends Component {
         const { redirect } = this.state;
 
         if (redirect) {
-            return <Redirect to='/' push="true"/>;
+            return <Redirect to='/'/>;
         }
 
         return (

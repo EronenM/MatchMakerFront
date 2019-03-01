@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Button from 'react-bootstrap/Button';
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
-import {NavLink} from 'react-router-dom';
+// import Button from 'react-bootstrap/Button';
+// import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+// import {NavLink} from 'react-router-dom';
 
 class Navbar extends Component {
     render() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import SelectRegUser from './SelectRegUser';
-import Button from 'react-bootstrap/Button';
+// import SelectRegUser from './SelectRegUser';
+// import Button from 'react-bootstrap/Button';
 import { NavLink } from 'react-router-dom';
 import LogInLanding from './LogInLanding';
 import './Main.css';

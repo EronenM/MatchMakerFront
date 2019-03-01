@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
+// import Navbar from './Navbar';
 import Main from './Main';
 import InputForm from './InputForm';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';

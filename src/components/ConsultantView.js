@@ -41,14 +41,16 @@ class ConsultantView extends Component {
             
 
         return (
-            <div>
-                <h1>Hello {this.state.firstname} {this.state.lastname}!</h1>
-                <br/>
-                <h4>{this.state.usertype} of {this.state.course} course.</h4>
-                <br/>
+            <div className="UpperCreateForm">
+                <div className="UpperCreateForm">
+
+                <h1 align="center">Welcome</h1>
+                <h2 align="center">{this.state.firstname} {this.state.lastname}</h2> 
+            
             
                 {this.renderThis()}
                 {/* <InputPreferences/> */}
+                </div>
             </div>
         );
     }

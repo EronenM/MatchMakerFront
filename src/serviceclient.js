@@ -76,13 +76,14 @@ export function logInUser(logInData){
 // ---------- Ylläoleva kirjaa sisään käyttäjän, en osaa sanoa 11.39 PM onko sen HTTP pyynnön metodi GET vai POST? LOL :D
 
 export function createNewUser(newUserData){
+    console.log("newUserData",newUserData)
     let options = {
         method: "POST",
         body : JSON.stringify(newUserData),
         headers: {
             "Content-Type" : "application/json"}
     }
-    return fetch('/api/people/create',options)
+    return fetch('/api/people/create',options).then(function(response){console.log(response)})
     
 }
 // Ylläoleva luo uuden käyttäjän
